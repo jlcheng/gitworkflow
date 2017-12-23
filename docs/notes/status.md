@@ -20,3 +20,19 @@ else
     echo "Diverged"
 fi
 ```
+
+See https://stackoverflow.com/a/39848551 for more plumbing commands
+
+
+Assuming that local is ahead of remote
+```
+# shows a list of new commits ahead of remote
+$ git rev-list `git merge-base @ @{u}`..`git rev-parse @`
+7083c93ced70cc7910e91de897bdf9f82f08dad6
+485a95eacb3540c04a8b515ffb9bbf9f1cc799cd
+
+# also 
+$ git rev-list --left-right @...@{u}
+7083...
+485a...
+```
